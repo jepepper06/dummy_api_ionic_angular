@@ -1,0 +1,7 @@
+{
+  "name": "JsonPlaceHolder",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
