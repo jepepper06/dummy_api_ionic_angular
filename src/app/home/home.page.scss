@@ -4,8 +4,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  // top: 50%;
+  // transform: translateY(-50%);
 }
 
 #container strong {
@@ -25,3 +25,89 @@
 #container a {
   text-decoration: none;
 }
+.home-header {
+  background: linear-gradient(to right,black,transparent);
+}
+.home-title {
+  font-size: 2em;
+  position: relative;
+  color: white;
+  z-index: 2;
+}
+.background-img-cont {
+  position: fixed;
+  top: 0;
+}
+.background-img{
+  position: fixed;
+  top: 0;
+  overflow-x: hidden;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-text {
+  font-size: 1.7em;
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+.gradient{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height:200%;
+  background: radial-gradient(ellipse at top right,transparent, rgb(44, 53, 104));
+  background-attachment: fixed;
+}
+.stars-container{
+  position: relative;
+  z-index: 2;
+}
+app-star-rating{
+  position: relative;
+  z-index: 2;
+}
+movie-list{
+  position: relative;
+  z-index: 2;
+  height: auto;
+}
+ion-menu-button{
+  color: white;
+  font-size: 2em;
+}
+ion-content{
+  z-index: 3;
+}
+// .movie-list-scroll{
+//   display: grid;
+//   grid-auto-flow: column;
+//   grid-auto-columns: 30%;
+// }
+// .movie-card{
+//   width: 30%;
+//   display: inline-block;
+// }
+
+
+// @media only screen and (min-width: 320px) {
+//   .background-img{
+//     width: 400%;
+//     left: -110%;
+//   }
+// }
+// @media only screen and (min-width: 720px) {
+//   .background-img {
+//     width: 200%;
+//     left: -15%;
+//   }
+// }
+// @media only screen and (min-width: 720px) {
+//   .background-img {
+//     width: 100%;
+//     left: 0;
+//   }
+// }

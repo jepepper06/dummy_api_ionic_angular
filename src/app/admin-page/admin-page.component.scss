@@ -1,0 +1,23 @@
+*{
+  font-size: 1.1em;
+}
+ion-col{
+  font-size: 15px;
+}
+a{
+  text-decoration: none;
+}
+.row{
+  border-top-color: rgb(191, 191, 191);
+  border-right-color: white;
+  border-left-color: white;
+  border-bottom-color: rgb(191, 191, 191);
+  border-width: .01em;
+  border-style:solid;
+  margin-bottom : -1px;
+  background-color:white
+}
+.container{
+  display: inline-block;
+}
+

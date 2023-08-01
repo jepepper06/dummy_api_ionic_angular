@@ -1,0 +1,98 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary" class="ion-no-border">
+    <ion-title>Movie Stamp</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-modal #deleteModal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Welcome</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <p>Are you sure?</p>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <ion-modal #updateModal trigger="open-modal" (willDismiss)="onWillDismissUpdate($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancelUpdate()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Welcome</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirmUpdate()" [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-label position="stacked">Update your Movie Name</ion-label>
+          <ion-input type="text" placeholder="" [(ngModel)]="movie!.movie" [value]="movie!.movie"></ion-input>
+          <ion-label position="stacked">Update your Movie image</ion-label>
+          <ion-input type="text" placeholder="" [(ngModel)]="movie!.image" [value]="movie!.image"></ion-input>
+          <ion-label position="stacked">Update your Movie Link</ion-label>
+          <ion-input type="text" placeholder="" [(ngModel)]="movie!.imdb_url" [value]="movie!.imdb_url"></ion-input>
+          <ion-label position="stacked">Update your Movie Rating</ion-label>
+          <ion-input type="number" step="0.1" placeholder="" [(ngModel)]="movie!.rating" [value]="movie!.rating"></ion-input>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <ion-split-pane when="xs" contentId="main">
+    <ion-menu contentId="main" class="ion-no-border">
+      <ion-content class="ion-padding ion-no-border"> Menu de Opciones
+        <ion-list>
+          <ion-item lines="full" [routerLink]="['/home']">
+            <div class="ion-margin-right">
+              <ion-icon name="film" ></ion-icon>
+            </div>
+            <ion-label>
+              Películas
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+  <div class="ion-page ion-no-border" id="main">
+      <ion-content class="ion-padding"> {{ message }}
+        <ion-grid>
+
+              <ion-row class="ion-top-padding">
+                <ion-col class="ion-text-center" [size]="3">Movie</ion-col>
+                <ion-col class="ion-text-center" [size]="4">Image</ion-col>
+                <ion-col class="ion-text-center" [size]="1">Rating</ion-col>
+                <ion-col class="ion-text-center" [size]="1">Link</ion-col>
+                <ion-col class="ion-text-center" [size]="1">Delete</ion-col>
+                <ion-col class="ion-text-center" [size]="1">Update</ion-col>
+              </ion-row>
+
+              <ion-row  class="ion-top-padding row" *ngFor="let movie of movies$ | async">
+                <ion-col class="ion-text-center" [size]="3">{{movie.movie}}</ion-col>
+                <ion-col class="ion-text-center" [size]="4">{{movie.image}}</ion-col>
+                <ion-col class="ion-text-center" [size]="1">{{movie.rating}}</ion-col>
+                <ion-col class="ion-text-center" [size]="1"><a href="{{movie.imdb_url}}">link</a></ion-col>
+                <ion-col class="ion-text-center" [size]="1" (click)="onSelectToDelete(movie)"><ion-icon name="trash"></ion-icon></ion-col >
+                <ion-col class="ion-text-center" [size]="1" (click)="onSelectedMovie(movie)"><ion-icon name="create"></ion-icon></ion-col>
+
+              </ion-row>
+
+        </ion-grid>
+      </ion-content>
+    </div>
+  </ion-split-pane>
+</ion-content>
+

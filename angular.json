@@ -70,12 +70,15 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve": {
+        "serve":{
+          "options": {
+            "browserTarget": "JsonPlaceHolder:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production"
-            },
+              "browserTarget": "app:build:production"            },
             "development": {
               "browserTarget": "app:build:development"
             },
@@ -136,7 +139,8 @@
   "cli": {
     "schematicCollections": [
       "@ionic/angular-toolkit"
-    ]
+    ],
+    "analytics": false
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

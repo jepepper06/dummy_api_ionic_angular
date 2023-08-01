@@ -1,0 +1,48 @@
+.list{
+  display: grid;
+  gap: 7px;
+  grid-auto-flow:column;
+  grid-auto-columns: 25%;
+  height: 25%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  .list-item{
+    color:white;
+    font-size: 2em;
+    height: 100%;
+    display: inline-block;
+  }
+}
+*{
+  font-size:2em;
+}
+
+.list{
+    height: 180px;
+    .list-item{
+      text-align: center;
+      height: 100%;
+      ion-img{
+        height: 140px;
+      }
+    }
+  }
+
+@media screen and (min-width:320px) {
+  *{
+    font-size: 0.8em;
+  }
+  .list{
+    gap: 21px;
+  }
+  ion-title{
+    display: none;
+  }
+}
+@media screen and (min-width: 720px) {
+  ion-title{
+    display: inline;
+    font-size: 1em;
+  }
+}
+

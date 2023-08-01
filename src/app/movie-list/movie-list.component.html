@@ -1,0 +1,8 @@
+<div class="list">
+  <div *ngFor="let movie of movieList$ | async" class="list-item ion-no-padding" (click)="onClick(movie)" >
+      <ion-img [src]="'../assets/'+movie.image"></ion-img>
+          <ion-title class="ion-top-padding">
+            <ion-text>{{ movie.movie}}</ion-text>
+          </ion-title>
+  </div>
+</div>

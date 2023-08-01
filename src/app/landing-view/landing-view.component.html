@@ -1,0 +1,30 @@
+<div class="gradient"></div>
+<ion-img [src]="'../../assets/'+movie!.image" class="background-img" id="background-img"></ion-img>
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="1">
+    </ion-col>
+    <ion-col sizeSm="10" sizeMd="8" sizeLg="5">
+      <ion-title class="home-title">
+        <h1>{{ movie!.movie }}</h1>
+      </ion-title>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="1"></ion-col>
+    <ion-col sizeSm="10" sizeMd="8" sizeLg="5" class="ion-padding stars-container">
+      <app-star-rating [rating]="movie!.rating"></app-star-rating>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-padding">
+    <ion-col size="1"></ion-col>
+    <ion-col sizeSm="10" sizeMd="8" sizeLg="5" class="">
+      <p>
+        <ion-text class="home-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. A vero placeat quam iusto! Deleniti harum blanditiis culpa in pariatur aperiam ducimus, facere ab libero sunt magnam necessitatibus sequi eaque cumque rerum asperiores voluptatibus ipsam officia laborum enim beatae voluptatum tempora velit. Quos labore minima delectus totam earum molestias consequatur culpa atque magni incidunt sequi, consequuntur fuga optio architecto eaque temporibus.
+        </ion-text>
+      </p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
