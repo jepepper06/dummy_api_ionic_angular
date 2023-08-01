@@ -23,7 +23,7 @@ export class MovieServiceService implements OnInit{
   selectedMovie$: BehaviorSubject<Movie> = new BehaviorSubject(this.defaultMovie);
 
   getMovies(){
-    let result = this.http.get<Movie[]>(environment.api_base_url+'/api/movies',
+    let result = this.http.get<Movie[]>('api/movies',
     {headers:{'Access-Control-Allow-Origin':'*'}});
     return result;
   }
